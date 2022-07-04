@@ -1,0 +1,9 @@
+DELETE FROM web_systemaudit;
+COMMIT;
+
+ALTER TABLE `web_systemaudit`
+	CHANGE COLUMN `id` `systemauditid` INT(11) NOT NULL AUTO_INCREMENT FIRST,
+	DROP PRIMARY KEY,
+	ADD PRIMARY KEY (`systemauditid`) USING BTREE;
+
+COMMIT;
